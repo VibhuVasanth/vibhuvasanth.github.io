@@ -1,29 +1,60 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding: 2rem;
 }
 
-#particles-js {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 0;
-
-
+/* Layout */
+header, section, footer {
+  max-width: 800px;
+  margin: 4rem auto;
+  text-align: center;
 }
 
+/* Typography */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
-.content {
-    position: relative;
-    z-index: 1;
-    color: #ffffff;
-    text-align: center;
-    margin-top: 100px;
+p, li {
+  font-size: 1.2rem;
+}
+
+/* Animation Styles */
+.animate-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Extras */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li::before {
+  content: "• ";
+  color: #00ffff;
+  margin-right: 0.5rem;
 }
