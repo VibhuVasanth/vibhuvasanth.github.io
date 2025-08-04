@@ -1,10 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    background: #222; /* dark background for visibility */
     font-family: Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #000000;
 }
 
 #particles-js {
@@ -19,7 +17,7 @@ body {
 .content {
     position: relative;
     z-index: 1;
-    color: #ffffff;
+    color: #fff;
     text-align: center;
     margin-top: 100px;
- }
+}
