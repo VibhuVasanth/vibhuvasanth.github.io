@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="coding-screen"></div>
+  
     <div class="content">
         <h1>Your Website Content</h1>
         <p>This is some content placed above the particle background.</p>
@@ -17,24 +17,7 @@
         particlesJS.load('particles-js', 'particles.json', function () {
             console.log('particles.js loaded - callback');
         });
-        //coding lines animation
-        const codelines = [
-            "function greet(name) {",
-            "   console.log('Hello, '+name+'!');",
-            "}",
-            "",
-            "greet('World');"
-        ];
-        const cont = document.querySelector('.coding-screen');
-        codelines.forEach((line, i) => {
-            const div = document.createElement('div');
-            div.textContent = line;
-            div.className = 'coding-line';
-            cont.appendChild(div);
-            setTimeout(() => {
-                div.classList.add('visible');
-            }, i * 1000);
-        });
+        
     </script>
 </body>
 </html>
