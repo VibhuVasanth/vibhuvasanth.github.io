@@ -2,9 +2,10 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Prevents scrollbars from appearing */
-    font-family: Arial, sans-serif; /* Example font */
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
     min-height: 100vh;
+    background-color: #000000; /* Ensures the whole page is black */
 }
 
 #particles-js {
@@ -13,14 +14,13 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: -1; /* Ensures particles are behind other content */
-    background-color: #000000; /* Example background color */
+    z-index: 0; /* Use 0 so it's behind .content but above body */
 }
 
 .content {
-    position: relative; 
+    position: relative;
     z-index: 1; /* Ensures content appears on top */
-    color: white; 
+    color: #ffffff;
     text-align: center;
-    margin-top: 100px; /* Example margin */
+    margin-top: 100px;
 }
