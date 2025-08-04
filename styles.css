@@ -3,6 +3,8 @@ body {
     padding: 0;
     overflow: hidden; /* Prevents scrollbars from appearing */
     font-family: Arial, sans-serif; /* Example font */
+    box-sizing: border-box;
+    min-height: 100vh;
 }
 
 #particles-js {
