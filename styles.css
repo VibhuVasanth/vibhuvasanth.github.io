@@ -14,8 +14,37 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
+
+
 }
 
+
+.coding-screen {
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    color:  #00ff00;
+    background: #111;
+    padding: 20px;
+    margin: 40px auto 0 auto;
+    width: 80vw;
+    max-width:600px;
+    min-height:80px;
+    box-shadow: 0 0 10px #00ff0044;
+    font-size: 1.2em;
+    white-space: pre;
+    z-index: 1;
+    position: relative;
+}
+
+.coding-line{
+    opacity: 0;
+    transition: opacity 0.5s;
+
+
+}
+
+.coding-line.visible{
+    opacity:1;
+}
 .content {
     position: relative;
     z-index: 1;
