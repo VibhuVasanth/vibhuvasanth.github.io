@@ -1,8 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    background: #2e2d2d; /* dark background for visibility */
+    overflow: hidden;
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #000000;
 }
 
 #particles-js {
@@ -11,13 +13,14 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 2; /* Now particles are in front of .content */
+    pointer-events: none; /* Allows clicking through particles */
 }
 
 .content {
     position: relative;
     z-index: 1;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     margin-top: 100px;
- }
+}
