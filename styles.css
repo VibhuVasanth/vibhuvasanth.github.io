@@ -1,11 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevents scrollbars from appearing */
+    overflow: hidden;
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
     min-height: 100vh;
-    background-color: #000000; /* Ensures the whole page is black */
+    background-color: #000000;
 }
 
 #particles-js {
@@ -14,12 +13,12 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: 0; /* Use 0 so it's behind .content but above body */
+    z-index: 0;
 }
 
 .content {
     position: relative;
-    z-index: 1; /* Ensures content appears on top */
+    z-index: 1;
     color: #ffffff;
     text-align: center;
     margin-top: 100px;
