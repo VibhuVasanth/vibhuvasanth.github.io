@@ -46,12 +46,8 @@
   "interactivity": {
     "detect_on": "canvas",
     "events": {
-      "onhover": {
-        "enable": false
-      },
-      "onclick": {
-        "enable": false
-      },
+      "onhover": { "enable": false },
+      "onclick": { "enable": false },
       "resize": true
     }
   },

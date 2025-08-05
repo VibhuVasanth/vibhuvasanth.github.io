@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cosmic Dust</title>
+  <title>Cosmic Dust Background</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Particle background -->
   <div id="particles-js"></div>
+
+  <!-- Foreground content -->
+  <div class="content">
+    <h1>Welcome to the Cosmos</h1>
+    <p>Drift through the dust of stars...</p>
+  </div>
 
   <!-- Particle.js library -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <!-- Load config -->
-  <script src="particles-config.js"></script>
+
+  <!-- Load JSON config -->
+  <script>
+    particlesJS.load('particles-js', 'particles-config.json', function() {
+      console.log('Cosmic dust loaded.');
+    });
+  </script>
 </body>
 </html>
