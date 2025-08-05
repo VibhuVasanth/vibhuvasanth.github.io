@@ -4,7 +4,7 @@ body {
     overflow: hidden;
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    background-color: #f10000, /* Dark background for contrast */ 
+    background-color: #ec1717;
 }
 
 #particles-js {
@@ -20,7 +20,7 @@ body {
 .content {
     position: relative;
     z-index: 1;
-    color: #ffffff;
+    color: #000000;
     text-align: center;
     margin-top: 100px;
- }
+}
