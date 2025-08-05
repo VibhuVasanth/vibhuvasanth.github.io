@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Cosmic Water Dust</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Particle Background Test</title>
 </head>
 <body>
-  <div id="particles-js"></div>
-  <div class="content">Cosmic Water Dust ✨</div>
-
-  <!-- Load particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
-  <!-- Load config -->
-  <script>
-    fetch('particles.json')
-      .then(response => response.json())
-      .then(config => {
-        particlesJS('particles-js', config);
-      });
-  </script>
+    <div id="particles-js"></div>
+   
+    <div class="content">
+        <h1>Your Website Content</h1>
+        <p>This is some content placed above the particle background.</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function () {
+            console.log('particles.js loaded - callback');
+        
+        });
+       
+    </script>
 </body>
 </html>
