@@ -1,9 +1,4 @@
 {
-  "background": {
-    "color": {
-      "value": "#ffffff"
-    }
-  },
   "particles": {
     "number": {
       "value": 80,
@@ -19,7 +14,7 @@
       "type": "circle"
     },
     "opacity": {
-      "value": 0.7,
+      "value": 0.8,
       "random": true,
       "anim": {
         "enable": false
@@ -37,7 +32,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 1.5,
+      "speed": 2,
       "direction": "none",
       "random": true,
       "straight": false,
@@ -51,7 +46,7 @@
       "onhover": {
         "enable": true,
         "mode": "repulse"
-      }},
+      },
       "onclick": {
         "enable": true,
         "mode": "push"
@@ -65,5 +60,8 @@
       },
       "push": {
         "particles_nb": 4
-      }}}
-    
+      }
+    }
+  },
+  "retina_detect": true
+}

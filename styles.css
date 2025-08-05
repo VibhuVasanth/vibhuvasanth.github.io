@@ -1,30 +1,27 @@
-body {
+/* Fullscreen layout */
+html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  background-color: #ffffff;
   overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
 }
 
+/* Particle container */
 #particles-js {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Push behind content */
-  background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
+  z-index: -1;
 }
 
-canvas {
-  filter: blur(0.5px);
-}
-
+/* Optional: content on top */
 .content {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding-top: 20vh;
+  top: 40%;
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: #333;
 }
