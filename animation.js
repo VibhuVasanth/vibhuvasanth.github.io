@@ -1,4 +1,4 @@
-]let scene, camera, renderer, particles;
+let scene, camera, renderer, particles;
 let mouse = { x: 0, y: 0 };
 let config = {
   particleCount: 500,
