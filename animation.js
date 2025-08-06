@@ -5,7 +5,7 @@ let particles, particleMaterial;
 let mouseX = 0, mouseY = 0;
 
 const particleCount = 1000;
-const particlePositions = new Float32Array(particleCount * 3);
+const particlePositions = new Float32Array(particleCount * 3) ;
 
 init();
 animate();

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <title>Particle Background Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dust Particles Follow Mouse - Background</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="content">
-        <h1>Your Website Content</h1>
-        <p>This is some content placed above the particle background.</p>
+    <!-- This div will contain your main website content -->
+    <div id="content">
+        <h1>Vibhu Vasanth</h1>
+        <p>This is some content layered over the interactive particle background.</p>
+        <p>You can add more sections, text, images, and other elements here.</p>
+        <p>Try moving your mouse around!</p>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS.load('particles-js', 'particles.json', function () {
-            console.log('particles.js loaded - callback');
-        });
-    </script>
+
+    <!-- The Three.js script will dynamically create and append the canvas here -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>
