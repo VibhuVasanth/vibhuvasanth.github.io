@@ -1,0 +1,8 @@
+{
+  "particleCount": 1000,
+  "particleSize": 0.05,
+  "colorSaturation": 1.0,
+  "colorLightness": 0.5,
+  "rotationSpeedX": 0.0005,
+  "rotationSpeedY": 0.001
+}
