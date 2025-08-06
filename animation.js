@@ -1,24 +1,16 @@
-let scene, camera, renderer, particles;
-let mouse = { x: 0, y: 0 };
-let config = {
-  particleCount: 500,
+let scene, camera, renderer, particles, particlePositions, particleVelocities;
+let mouse = new THREE.Vector3();
+
+// 🔧 Config is now hardcoded
+const config = {
+  particleCount: 300,
+  particleSize: 0.15,
   colorSpeed: 0.01,
-  particleSize: 0.1
+  followStrength: 0.02
 };
 
-// Load config from JSON
-fetch('particles.json')
-  .then(res => res.json())
-  .then(data => {
-    config = data;
-    init();
-    animate();
-  })
-  .catch(err => {
-    console.warn('Could not load particles.json, using defaults.', err);
-    init();
-    animate();
-  });
+init();
+animate();
 
 function init() {
   scene = new THREE.Scene();
@@ -28,32 +20,40 @@ function init() {
     0.1,
     1000
   );
-  camera.position.z = 5;
+  camera.position.z = 10;
 
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
   const geometry = new THREE.BufferGeometry();
-  const positions = [];
-  const colors = [];
+  particlePositions = new Float32Array(config.particleCount * 3);
+  particleVelocities = new Float32Array(config.particleCount * 3);
+  const colors = new Float32Array(config.particleCount * 3);
 
   for (let i = 0; i < config.particleCount; i++) {
-    positions.push((Math.random() - 0.5) * 10);
-    positions.push((Math.random() - 0.5) * 10);
-    positions.push((Math.random() - 0.5) * 10);
+    const i3 = i * 3;
+    particlePositions[i3] = (Math.random() - 0.5) * 20;
+    particlePositions[i3 + 1] = (Math.random() - 0.5) * 20;
+    particlePositions[i3 + 2] = (Math.random() - 0.5) * 20;
 
-    colors.push(Math.random(), Math.random(), Math.random());
+    particleVelocities[i3] = 0;
+    particleVelocities[i3 + 1] = 0;
+    particleVelocities[i3 + 2] = 0;
+
+    colors[i3] = Math.random();
+    colors[i3 + 1] = Math.random();
+    colors[i3 + 2] = Math.random();
   }
 
-  geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-  geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+  geometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   const material = new THREE.PointsMaterial({
     size: config.particleSize,
     vertexColors: true,
     transparent: true,
-    opacity: 0.8
+    opacity: 0.9
   });
 
   particles = new THREE.Points(geometry, material);
@@ -62,6 +62,10 @@ function init() {
   window.addEventListener('mousemove', (event) => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    const vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
+    vector.unproject(camera);
+    mouse.copy(vector);
   });
 
   window.addEventListener('resize', () => {
@@ -74,15 +78,39 @@ function init() {
 function animate() {
   requestAnimationFrame(animate);
 
-  particles.rotation.y += (mouse.x - particles.rotation.y) * 0.05;
-  particles.rotation.x += (mouse.y - particles.rotation.x) * 0.05;
-
+  const positions = particles.geometry.attributes.position.array;
   const colors = particles.geometry.attributes.color.array;
-  for (let i = 0; i < colors.length; i += 3) {
-    colors[i] = (colors[i] + config.colorSpeed) % 1;
-    colors[i + 1] = (colors[i + 1] + config.colorSpeed) % 1;
-    colors[i + 2] = (colors[i + 2] + config.colorSpeed) % 1;
+
+  for (let i = 0; i < config.particleCount; i++) {
+    const i3 = i * 3;
+
+    const px = positions[i3];
+    const py = positions[i3 + 1];
+    const pz = positions[i3 + 2];
+
+    const dx = mouse.x - px;
+    const dy = mouse.y - py;
+    const dz = mouse.z - pz;
+
+    particleVelocities[i3] += dx * config.followStrength;
+    particleVelocities[i3 + 1] += dy * config.followStrength;
+    particleVelocities[i3 + 2] += dz * config.followStrength;
+
+    particleVelocities[i3] *= 0.9;
+    particleVelocities[i3 + 1] *= 0.9;
+    particleVelocities[i3 + 2] *= 0.9;
+
+    positions[i3] += particleVelocities[i3];
+    positions[i3 + 1] += particleVelocities[i3 + 1];
+    positions[i3 + 2] += particleVelocities[i3 + 2];
+
+    const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+    colors[i3] = (colors[i3] + config.colorSpeed + dist * 0.0005) % 1;
+    colors[i3 + 1] = (colors[i3 + 1] + config.colorSpeed + dist * 0.0005) % 1;
+    colors[i3 + 2] = (colors[i3 + 2] + config.colorSpeed + dist * 0.0005) % 1;
   }
+
+  particles.geometry.attributes.position.needsUpdate = true;
   particles.geometry.attributes.color.needsUpdate = true;
 
   renderer.render(scene, camera);
