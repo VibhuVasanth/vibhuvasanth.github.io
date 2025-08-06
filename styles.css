@@ -1,27 +1,8 @@
 body {
-    margin: 0;
-    overflow: hidden; /* Prevent body scroll if content overflows, you can adjust this */
-    background-color: #1a1a1a; /* Dark background for better visibility of particles */
-    cursor: none; /* Hide default cursor for the canvas area */
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
 }
-
-/* Style for the Three.js canvas */
 canvas {
-    position: fixed; /* Fixes the canvas to the viewport */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Positions the canvas behind other content */
+  display: block;
 }
-
-#content {
-    position: relative; /* Make it a positioning context for its children */
-    z-index: 1; /* Ensure content is above the canvas */
-    color: white; /* Example text color */
-    font-family: sans-serif;
-    padding: 20px;
-    text-align: center;
-    /* Add other styles for your content as needed */
- }
-
