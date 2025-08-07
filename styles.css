@@ -31,8 +31,8 @@ nav {
   left: 0;
   background: var(--nav-bg);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-start;
   padding: 0.7em 2em 0.7em 0.4em;
   z-index: 100;
   box-shadow: 0 2px 16px 0 #000a;
@@ -46,6 +46,7 @@ nav {
   letter-spacing: 2px;
   text-shadow: 0 2px 12px #000a;
   user-select: none;
+  margin-left: 1.5em;
 }
 
 .dropdown {
@@ -64,6 +65,7 @@ nav {
   transition: background 0.3s, transform 0.2s;
   box-shadow: 0 2px 8px #ff2d2d44;
   outline: none;
+  margin-left: 0;
 }
 
 .dropbtn:active {
@@ -73,7 +75,7 @@ nav {
 .dropdown-content {
   display: none;
   position: absolute;
-  right: 0;
+  left: 0;
   background: var(--glass);
   min-width: 180px;
   border-radius: 12px;
@@ -153,35 +155,25 @@ main {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  width: 100vw;
   color: #fff;
 }
 
 #ai-bg {
-  position: absolute;
+  position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-}
-
-#three-container {
-  width: 100vw;
-  height: 60vh;
-  min-height: 350px;
-  max-height: 520px;
-  z-index: 2;
-  position: relative;
-  margin: 0 auto;
+  z-index: 1;
   pointer-events: none;
 }
 
 .hero-text {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 3;
-  width: 100%;
+  z-index: 2;
+  width: 100vw;
   pointer-events: none;
 }
 
@@ -192,7 +184,6 @@ main {
   color: #fff;
   text-shadow: 0 2px 12px #000a, 0 0 40px #ff2d2d55;
   letter-spacing: 2px;
-  position: relative;
   display: inline-block;
   animation: bounceName 1.2s infinite cubic-bezier(.68,-0.55,.27,1.55);
   filter: drop-shadow(0 0 8px #00eaff88);
@@ -204,10 +195,6 @@ main {
   40% { transform: translateY(0);}
   60% { transform: translateY(-8px);}
   80% { transform: translateY(0);}
-}
-
-.hero-section {
-  cursor: none;
 }
 
 .about-section, .contact-section, .projects-section, .skills-section {
@@ -339,8 +326,8 @@ footer {
 }
 
 @media (max-width: 900px) {
+  nav { padding: 0.5em 1em 0.5em 1.2em; }
   .animated-name { font-size: 2em; }
-  nav { padding: 0.5em 1em; }
   .about-section, .contact-section, .projects-section, .skills-section { padding: 1.5em 0.7em; }
   #three-container { min-height: 220px; }
   .hero-text { top: 60%; }
@@ -348,8 +335,8 @@ footer {
 }
 
 @media (max-width: 600px) {
+  nav { padding: 0.5em 0.5em 0.5em 0.5em; }
   .animated-name { font-size: 1.3em; }
-  nav { padding: 0.5em 0.5em; }
   .about-section, .contact-section, .projects-section, .skills-section { padding: 1em 0.2em; }
   #three-container { min-height: 160px; }
   .hero-text { top: 62%; }
