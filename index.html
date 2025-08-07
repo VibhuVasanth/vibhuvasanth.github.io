@@ -1,27 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibhu Vasanth </title>
-    <link rel="stylesheet" href="styles.css">
-</html>
+  <meta charset="UTF-8">
+  <title>Vibhu Vasanth | Cybersecurity 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6e1.png">
+</head>
 <body>
-    <div class="container">
-        <div class="content content1">
-             <h1 style="text-align: center;font-family:Arial, Helvetica, sans-serif; font-size:30px">Vibhu Vasanth</h1>
-             <p style="text-align: center;font-family:Arial, Helvetica, sans-serif; font-size:15px">Welcome to my profile!</p>
+  <nav>
+    <div class="logo">CyberSecure</div>
+    <div class="dropdown" id="dropdownMenu">
+      <button class="dropbtn" id="menuBtn" aria-label="Menu">&#9776;</button>
+      <div class="dropdown-content" id="dropdownContent">
+        <a href="#hero">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <section id="hero" class="section hero-section">
+      <div id="three-container"></div>
+      <div class="hero-text">
+        <h1 class="animated-name glitch" data-text="Vibhu Vasanth">Vibhu Vasanth</h1>
+        <p class="subtitle">Your Digital Shield in Cybersecurity</p>
+      </div>
+      <div class="scroll-down"></div>
+    </section>
+    <section id="about" class="section about-section">
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm Vibhu!<br>
+        I'm passionate about cybersecurity and interactive 3D web experiences.<br>
+        I build secure, visually engaging websites that make a difference.<br>
+        Let's make the web safer together!
+      </p>
+    </section>
+    <section id="projects" class="section projects-section">
+      <h2>Projects</h2>
+      <div class="projects-list">
+        <div class="project-card">
+          <h3>PhishGuard</h3>
+          <p>AI-powered phishing detection tool for emails and web forms.</p>
         </div>
-   <div class="container">
-        <div class="content content2">
-             <h1 style="text-align: center;font-family:Arial, Helvetica, sans-serif; font-size:30px">About Me</h1>
-             <p style="text-align: center;font-family:Arial, Helvetica, sans-serif; font-size:15px">Hi their, I am Vibhu Vasanth. THank you</p>
+        <div class="project-card">
+          <h3>Secure3D</h3>
+          <p>Interactive 3D visualizations for security awareness training.</p>
         </div>
-    <div class="container">
-        <div class="content content3 ">
-             <h1 style="text-align: center;font-family:Arial, Helvetica, sans-serif; font-size:30px">Expirence</h1>
-             <p style="text-align: center;font-family:Arial, Helvetica, sans-serif; font-size:15px">I have done many many things</p>
-        
-     </div>
-    </body>
-    </html>
+        <div class="project-card">
+          <h3>CryptoVault</h3>
+          <p>End-to-end encrypted file storage with real-time breach alerts.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section contact-section">
+      <h2>Contact</h2>
+      <p>
+        Want to collaborate or have a question?<br>
+        <a href="mailto:vibhu@example.com" class="contact-link">Email Me</a>
+      </p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Vibhu Vasanth. All rights reserved.
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+  <script src="animation.js"></script>
+</body>
+</html>
