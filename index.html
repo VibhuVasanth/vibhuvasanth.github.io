@@ -1,96 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vibhu Vasanth | Cybersecurity 3D</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6e1.png">
+    <meta charset="UTF-8">
+    <title>Vibhu Vasanth</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <div class="dropdown" id="dropdownMenu">
-      <button class="dropbtn" id="menuBtn" aria-label="Menu">&#9776;</button>
-      <div class="dropdown-content" id="dropdownContent">
-        <a href="#hero">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="split-wrapper" id="splitWrapper">
+        <div class="split right" id="rightPanel">
+            <h1>Hello, My name is Vibhu Vasanth.</h1>
+        </div>
+        <div class="split left" id="leftPanel">
+            <h1>Welcome to my profile.</h1>
+        </div>
     </div>
-    <div class="logo">CyberSecure</div>
-  </nav>
-  <main>
-    <section id="hero" class="section hero-section">
-      <div id="ai-bg"></div>
-      <div class="hero-text">
-        <h1 class="animated-name" id="mainName">Vibhu Vasanth</h1>
-      </div>
-    </section>
-    <section id="about" class="section about-section">
-      <h2>About Me</h2>
-      <p>
-        Hi, I'm Vibhu!<br>
-        I'm passionate about cybersecurity, AI, and interactive 3D web experiences.<br>
-        I build secure, visually engaging websites that make a difference.<br>
-        Let's make the web safer together!
-      </p>
-    </section>
-    <section id="skills" class="section skills-section">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <div class="skill-bar">
-          <span>Cybersecurity</span>
-          <div class="bar"><div class="fill" style="width: 95%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <span>Three.js</span>
-          <div class="bar"><div class="fill" style="width: 90%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <span>AI/ML</span>
-          <div class="bar"><div class="fill" style="width: 85%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <span>Web Development</span>
-          <div class="bar"><div class="fill" style="width: 92%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <span>Python</span>
-          <div class="bar"><div class="fill" style="width: 88%"></div></div>
-        </div>
-      </div>
-    </section>
-    <section id="projects" class="section projects-section">
-      <h2>Projects</h2>
-      <div class="projects-list">
-        <div class="project-card">
-          <h3>PhishGuard</h3>
-          <p>AI-powered phishing detection tool for emails and web forms.</p>
-        </div>
-        <div class="project-card">
-          <h3>Secure3D</h3>
-          <p>Interactive 3D visualizations for security awareness training.</p>
-        </div>
-        <div class="project-card">
-          <h3>CryptoVault</h3>
-          <p>End-to-end encrypted file storage with real-time breach alerts.</p>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="section contact-section">
-      <h2>Contact</h2>
-      <p>
-        Want to collaborate or have a question?<br>
-        <a href="mailto:vibhu@example.com" class="contact-link">Email Me</a>
-      </p>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Vibhu Vasanth. All rights reserved.
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
-  <script src="animation.js"></script>
+    <script>
+        setTimeout(() => {
+            document.getElementById('splitWrapper').classList.add('split-half');
+        }, 2500);
+    </script>
 </body>
 </html>
