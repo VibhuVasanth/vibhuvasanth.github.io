@@ -1,57 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #fff;
-    color: #000;
-    overflow: hidden;
-    min-height: 100vh;
-    min-width: 100vw;
-}
-
-.split-wrapper {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-}
-
-.split {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5em;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #fff;
-    color: #000;
-    transition: all 1s cubic-bezier(.77,0,.18,1);
-    position: absolute;
-    top: 0;
-}
-.right {
-    left: 100vw;
-    z-index: 1;
-
-
-}
-
-.left {
-    left: 0;
-    z-index: 2;
-}
-.split-wrapper.split-half .right {
-    left: 0;
-    width: 50vw;
-
-}
-.split-wrapper.split-half .left {
-    left: 50vw;
-    width: 50vw;
-
+.profile-container {
+  width: 300px; /* Or a percentage, e.g., 80% */
+  height: 400px; /* Set a fixed height for the scrollable area */
+  overflow-y: scroll; /* Enables vertical scrolling when content exceeds height */
+  /* Optional: Customize scrollbar appearance */
+  /* For WebKit browsers (Chrome, Safari): */
+  /* &::-webkit-scrollbar { width: 8px; } */
+  /* &::-webkit-scrollbar-thumb { background-color: #888; border-radius: 4px; } */
 }
