@@ -1,3 +1,18 @@
+#textCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: -1;
+  display: block;
+}
+
+body {
+  background: transparent;
+}
+
 .profile-container {
   width: 300px; /* Or a percentage, e.g., 80% */
   height: 400px; /* Set a fixed height for the scrollable area */
